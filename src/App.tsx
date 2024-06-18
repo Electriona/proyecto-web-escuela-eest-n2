@@ -1,51 +1,14 @@
-import {
-    Admin,
-    Resource,
-    ShowGuesser,
-    defaultLightTheme,
-    defaultDarkTheme,
-    CustomRoutes,
-} from 'react-admin';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import BookIcon from '@mui/icons-material/Book';
-import dataProvider from './dataProvider';
-import PostListPublic from './posts/PostListPublic';
-import CustomLayout from './posts/CustomLayout';
+import PostsPublic from './posts/PostsPublic';
+import PostsAdmin from './posts/PostsAdmin';
 
-function App() {
+export default function App() {
     return (
         <BrowserRouter>
-            <Admin
-                dataProvider={dataProvider}
-                lightTheme={defaultLightTheme}
-                darkTheme={defaultDarkTheme}
-                layout={CustomLayout}
-            >
-                <CustomRoutes noLayout>
-                    <Route path='blog' element={<PostListPublic />} />
-                </CustomRoutes>
-                
-                {/* <Resource
-                    name="posts"
-                    list={PostListPublic}
-                    show={ShowGuesser}
-                    recordRepresentation="title"
-                    icon={BookIcon}
-                />
-
-                <Resource
-                    name="posts"
-                    list={PostList}
-                    edit={PostEdit}
-                    create={PostCreate}
-                    show={ShowGuesser}
-                    recordRepresentation="title"
-                    icon={BookIcon}
-                /> */}
-
-            </Admin>
+            <Routes>
+                <Route path='' element={<PostsPublic />} />
+                <Route path='/admin/*' element={<PostsAdmin />} />
+            </Routes>
         </BrowserRouter>
     );
 }
-
-export default App;
