@@ -5,7 +5,8 @@ import {
     CustomRoutes,
 } from 'react-admin';
 import { Route } from "react-router-dom";
-import dataProvider from '../dataProvider';
+// import dataProvider from '../dataProvider';
+import dataProvider from '../CustomDataProvider';
 import PostListPublic from './PostListPublic';
 
 export default function PostsPublic() {

@@ -6,7 +6,8 @@ import {
     defaultDarkTheme,
 } from 'react-admin';
 import BookIcon from '@mui/icons-material/Book';
-import dataProvider from '../dataProvider';
+//import dataProvider from '../dataProvider';
+import dataProvider from '../CustomDataProvider';
 import PostList from './PostList';
 import PostEdit from './PostEdit';
 import PostCreate from './PostCreate';
